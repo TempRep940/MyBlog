@@ -1,0 +1,212 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: "Segoe UI", Georgia, serif;
+  font-size: 16px;
+}
+
+/* Full-screen flex layout */
+.layout {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+
+/* ── Navigation bar: middle layer ── */
+.nav-bar {
+  position: relative;
+  z-index: 2;
+  width: 90px;
+  flex-shrink: 0;
+  background-color: #C3C3C3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 20px 0;
+}
+
+/* ── Square buttons: top layer ── */
+.nav-square {
+  position: relative;
+  z-index: 3;
+  width: 54px;
+  height: 54px;
+  background-color: #00A2E8;
+  border: none;
+  cursor: pointer;
+  border-radius: 0;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  transition: opacity 0.15s, transform 0.15s;
+  outline: none;
+}
+
+.nav-square:hover {
+  opacity: 0.85;
+  transform: scale(1.06);
+}
+
+.nav-square.active {
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
+
+/* ── Article area: bottom layer ── */
+.content-area {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  background-color: #70EDAA;
+  overflow-y: auto;
+  padding: 48px 56px;
+}
+
+/* Each article is hidden by default */
+.article {
+  display: none;
+}
+
+.article.visible {
+  display: block;
+}
+
+.article h1 {
+  font-size: 2rem;
+  margin-bottom: 24px;
+  color: #1a1a1a;
+}
+
+.article h2 {
+  font-size: 1.4rem;
+  margin: 20px 0 12px;
+  color: #222;
+}
+
+.article p {
+  line-height: 1.8;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+/* ── Tables ── */
+.article table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 20px 0;
+  font-size: 0.95rem;
+}
+
+.article table th,
+.article table td {
+  border: 1px solid #555;
+  padding: 8px 12px;
+  text-align: left;
+  vertical-align: top;
+  color: #222;
+}
+
+.article table th {
+  background-color: rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+}
+
+.article table tr:nth-child(even) td {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+/* ── TOC panel (extends right from nav bar) ── */
+.toc-panel {
+  position: absolute;
+  left: 90px; /* same as nav-bar width */
+  top: 0;
+  width: 260px;
+  height: 100vh;
+  background: #ffffff;
+  z-index: 2;
+  overflow-y: auto;
+  padding: 28px 14px;
+  box-shadow: 3px 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.toc-panel.hidden {
+  display: none;
+}
+
+.toc-link {
+  display: block;
+  padding: 5px 8px;
+  margin-bottom: 2px;
+  color: #1a1a1a;
+  text-decoration: none;
+  font-size: 0.88em;
+  line-height: 1.45;
+  border-radius: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.toc-link:hover {
+  background-color: #f0f0f0;
+  color: #00A2E8;
+}
+
+.toc-level-1 {
+  padding-left: 8px;
+  font-weight: 600;
+}
+
+.toc-level-2 {
+  padding-left: 24px;
+  font-weight: 400;
+}
+
+.toc-level-3 {
+  padding-left: 40px;
+  font-weight: 400;
+  font-style: italic;
+  color: #555;
+}
+
+/* ── Slide images ── */
+.slide-img {
+  display: block;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto 32px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  border-radius: 4px;
+}
+
+/* ── Code blocks (Google Docs export: each line is a <p> with inline bg) ── */
+.article-body p[style*="background-color:#f5f5f5"] {
+  margin: 0 !important;
+  padding: 1px 12px !important;
+  line-height: 1.55 !important;
+  border-left: 3px solid #bbb;
+}
+
+/* Add top spacing before the first code line and bottom spacing after the last */
+.article-body p[style*="background-color:#f5f5f5"]:first-of-type,
+.article-body p:not([style*="background-color:#f5f5f5"]) + p[style*="background-color:#f5f5f5"] {
+  margin-top: 16px !important;
+  border-radius: 4px 4px 0 0;
+}
+
+.article-body p[style*="background-color:#f5f5f5"]:last-of-type,
+.article-body p[style*="background-color:#f5f5f5"]:not(:has(+ p[style*="background-color:#f5f5f5"])) {
+  margin-bottom: 16px !important;
+  border-radius: 0 0 4px 4px;
+}

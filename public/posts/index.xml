@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on My Blog</title>
+    <link>http://localhost:1313/posts/</link>
+    <description>Recent content in Posts on My Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 28 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>IP camera penetration testing</title>
+      <link>http://localhost:1313/posts/article-1/</link>
+      <pubDate>Sat, 28 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/article-1/</guid>
+      <description>&lt;div class=&#34;article-body&#34;&gt;&#xA;&lt;div id=&#34;toc-data&#34; style=&#34;display:none&#34;&gt;&#xA;&lt;p data-toc-level=&#34;1&#34;&gt;&lt;span&gt;&lt;a href=&#34;#h.5cexiexxg61t&#34;&gt;Device Information&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&#xA;&lt;p data-toc-level=&#34;2&#34;&gt;&lt;span&gt;&lt;a href=&#34;#h.jznvqhaa2o6q&#34;&gt;Technical details&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&#xA;&lt;p data-toc-level=&#34;3&#34;&gt;&lt;span&gt;&lt;a href=&#34;#h.ys71ddc8fn5f&#34;&gt;Software version&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&#xA;&lt;p data-toc-level=&#34;2&#34;&gt;&lt;span&gt;&lt;a href=&#34;#h.9u8jevgww60r&#34;&gt;Contact address of the manufacturer&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&#xA;&lt;p data-toc-level=&#34;2&#34;&gt;&lt;span&gt;&lt;a href=&#34;#h.5mht7bi3a6gg&#34;&gt;Brief description of the device and how it works&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&#xA;&lt;p data-toc-level=&#34;2&#34;&gt;&lt;span&gt;&lt;a href=&#34;#h.9oe8lcm98d3r&#34;&gt;Known vulnerabilities&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&#xA;&lt;p data-toc-level=&#34;2&#34;&gt;&lt;span&gt;&lt;a href=&#34;#h.xsz0p7gkzsto&#34;&gt;Vulnerability of similar device from TP-LINK&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&#xA;&lt;p data-toc-level=&#34;1&#34;&gt;&lt;span&gt;&lt;a href=&#34;#h.tlhpggu0mfzj&#34;&gt;Setup of the device&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&#xA;&lt;p data-toc-level=&#34;2&#34;&gt;&lt;span&gt;        &lt;/span&gt;&lt;span&gt;&lt;a href=&#34;#h.t67vcmv6g3io&#34;&gt;Wait, is that password safe enough?&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&#xA;&lt;p data-toc-level=&#34;1&#34;&gt;&lt;span&gt;&lt;a href=&#34;#h.c5n42ztjn5lp&#34;&gt;Using Nmap to scan&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&#xA;&lt;p data-toc-level=&#34;2&#34;&gt;&lt;span&gt;        &lt;/span&gt;&lt;span&gt;&lt;a href=&#34;#h.ddz4d47f0686&#34;&gt;Scan for open TCP ports&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&#xA;&lt;p data-toc-level=&#34;2&#34;&gt;&lt;span&gt;        &lt;/span&gt;&lt;span&gt;&lt;a href=&#34;#h.ob4wab4vk95s&#34;&gt;Scan for open UDP ports&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&#xA;&lt;p data-toc-level=&#34;3&#34;&gt;&lt;span&gt;&lt;a href=&#34;#h.hb9xwqxus9zy&#34;&gt;An example about the DoS via ws-discovery&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&#xA;&lt;p data-toc-level=&#34;1&#34;&gt;&lt;span&gt;&lt;a href=&#34;#h.n1j5sqdcz4fd&#34;&gt;Try SSH, Telnet and HTTP on the open TCP ports&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>GPU acceleration</title>
+      <link>http://localhost:1313/posts/article-2/</link>
+      <pubDate>Sat, 28 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/article-2/</guid>
+      <description>&lt;div class=&#34;article-body slides&#34;&gt;&#xA;&lt;img src=&#34;http://localhost:1313/images/ascon-slide-02.png&#34; alt=&#34;Slide 2&#34; class=&#34;slide-img&#34;&gt;&#xA;&lt;img src=&#34;http://localhost:1313/images/ascon-slide-03.png&#34; alt=&#34;Slide 3&#34; class=&#34;slide-img&#34;&gt;&#xA;&lt;img src=&#34;http://localhost:1313/images/ascon-slide-04.png&#34; alt=&#34;Slide 4&#34; class=&#34;slide-img&#34;&gt;&#xA;&lt;img src=&#34;http://localhost:1313/images/ascon-slide-05.png&#34; alt=&#34;Slide 5&#34; class=&#34;slide-img&#34;&gt;&#xA;&lt;img src=&#34;http://localhost:1313/images/ascon-slide-06.png&#34; alt=&#34;Slide 6&#34; class=&#34;slide-img&#34;&gt;&#xA;&lt;img src=&#34;http://localhost:1313/images/ascon-slide-07.png&#34; alt=&#34;Slide 7&#34; class=&#34;slide-img&#34;&gt;&#xA;&lt;img src=&#34;http://localhost:1313/images/ascon-slide-08.png&#34; alt=&#34;Slide 8&#34; class=&#34;slide-img&#34;&gt;&#xA;&lt;img src=&#34;http://localhost:1313/images/ascon-slide-09.png&#34; alt=&#34;Slide 9&#34; class=&#34;slide-img&#34;&gt;&#xA;&lt;img src=&#34;http://localhost:1313/images/ascon-slide-10.png&#34; alt=&#34;Slide 10&#34; class=&#34;slide-img&#34;&gt;&#xA;&lt;/div&gt;</description>
+    </item>
+    <item>
+      <title>Auto Aim</title>
+      <link>http://localhost:1313/posts/article-3/</link>
+      <pubDate>Sat, 28 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/article-3/</guid>
+      <description>&lt;div class=&#34;article-body slides&#34;&gt;&#xA;&lt;img src=&#34;http://localhost:1313/images/car-slide-01.png&#34; alt=&#34;Slide 1&#34; class=&#34;slide-img&#34;&gt;&#xA;&lt;img src=&#34;http://localhost:1313/images/car-slide-02.png&#34; alt=&#34;Slide 2&#34; class=&#34;slide-img&#34;&gt;&#xA;&lt;img src=&#34;http://localhost:1313/images/car-slide-03.png&#34; alt=&#34;Slide 3&#34; class=&#34;slide-img&#34;&gt;&#xA;&lt;img src=&#34;http://localhost:1313/images/car-slide-04.png&#34; alt=&#34;Slide 4&#34; class=&#34;slide-img&#34;&gt;&#xA;&lt;img src=&#34;http://localhost:1313/images/car-slide-05.png&#34; alt=&#34;Slide 5&#34; class=&#34;slide-img&#34;&gt;&#xA;&lt;img src=&#34;http://localhost:1313/images/car-slide-06.png&#34; alt=&#34;Slide 6&#34; class=&#34;slide-img&#34;&gt;&#xA;&lt;img src=&#34;http://localhost:1313/images/car-slide-07.png&#34; alt=&#34;Slide 7&#34; class=&#34;slide-img&#34;&gt;&#xA;&lt;img src=&#34;http://localhost:1313/images/car-slide-08.png&#34; alt=&#34;Slide 8&#34; class=&#34;slide-img&#34;&gt;&#xA;&lt;img src=&#34;http://localhost:1313/images/car-slide-09.png&#34; alt=&#34;Slide 9&#34; class=&#34;slide-img&#34;&gt;&#xA;&lt;img src=&#34;http://localhost:1313/images/car-slide-10.png&#34; alt=&#34;Slide 10&#34; class=&#34;slide-img&#34;&gt;&#xA;&lt;img src=&#34;http://localhost:1313/images/car-slide-11.png&#34; alt=&#34;Slide 11&#34; class=&#34;slide-img&#34;&gt;&#xA;&lt;img src=&#34;http://localhost:1313/images/car-slide-12.png&#34; alt=&#34;Slide 12&#34; class=&#34;slide-img&#34;&gt;&#xA;&lt;img src=&#34;http://localhost:1313/images/car-slide-13.png&#34; alt=&#34;Slide 13&#34; class=&#34;slide-img&#34;&gt;&#xA;&lt;img src=&#34;http://localhost:1313/images/car-slide-14.png&#34; alt=&#34;Slide 14&#34; class=&#34;slide-img&#34;&gt;&#xA;&lt;img src=&#34;http://localhost:1313/images/car-slide-15.png&#34; alt=&#34;Slide 15&#34; class=&#34;slide-img&#34;&gt;&#xA;&lt;img src=&#34;http://localhost:1313/images/car-slide-16.png&#34; alt=&#34;Slide 16&#34; class=&#34;slide-img&#34;&gt;&#xA;&lt;img src=&#34;http://localhost:1313/images/car-slide-17.png&#34; alt=&#34;Slide 17&#34; class=&#34;slide-img&#34;&gt;&#xA;&lt;img src=&#34;http://localhost:1313/images/car-slide-18.png&#34; alt=&#34;Slide 18&#34; class=&#34;slide-img&#34;&gt;&#xA;&lt;img src=&#34;http://localhost:1313/images/car-slide-19.png&#34; alt=&#34;Slide 19&#34; class=&#34;slide-img&#34;&gt;&#xA;&lt;/div&gt;</description>
+    </item>
+    <item>
+      <title>Article Four</title>
+      <link>http://localhost:1313/posts/article-4/</link>
+      <pubDate>Sat, 28 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/article-4/</guid>
+      <description>&lt;h2 id=&#34;article-four&#34;&gt;Article Four&lt;/h2&gt;&#xA;&lt;p&gt;This is placeholder content for the fourth article.&lt;/p&gt;&#xA;&lt;p&gt;Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.&lt;/p&gt;&#xA;&lt;p&gt;Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Maecenas faucibus mollis interdum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
