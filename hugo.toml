@@ -1,0 +1,10 @@
+baseURL = "http://localhost:1313/"
+languageCode = "en-us"
+title = "My Blog"
+theme = "myblog"
+
+[params]
+  description = "My Personal Blog"
+
+[markup.goldmark.renderer]
+  unsafe = true

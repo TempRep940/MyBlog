@@ -1,0 +1,142 @@
+{{ define "main" }}
+{{ $posts := where site.RegularPages "Section" "posts" }}
+{{ $sorted := sort $posts "Params.weight" "asc" }}
+
+<div class="layout">
+  <!-- Navigation bar: middle layer (z-index: 2) -->
+  <nav class="nav-bar">
+    {{ range $index, $post := $sorted }}
+    <button
+      class="nav-square{{ if eq $index 0 }} active{{ end }}"
+      data-target="article-{{ add $index 1 }}"
+      onclick="{{ if eq $index 0 }}handleSquare1Click(this){{ else }}showArticle('article-{{ add $index 1 }}', this){{ end }}"
+      title="{{ $post.Title }}"
+    >
+      {{ add $index 1 }}
+    </button>
+    {{ end }}
+  </nav>
+
+  <!-- TOC panel: slides out from nav bar when on article-1 (z-index: 2) -->
+  <div id="toc-panel" class="toc-panel hidden">
+    <div id="toc-list"></div>
+  </div>
+
+  <!-- Article area: background is bottom layer (z-index: 1) -->
+  <main class="content-area">
+    {{ range $index, $post := $sorted }}
+    <article
+      id="article-{{ add $index 1 }}"
+      class="article{{ if eq $index 0 }} visible{{ end }}"
+    >
+      <h1>{{ $post.Title }}</h1>
+      {{ $post.Content }}
+    </article>
+    {{ end }}
+  </main>
+</div>
+
+<script>
+let currentArticle = 'article-1';
+
+function showArticle(id, btn) {
+  document.querySelectorAll('.article').forEach(a => a.classList.remove('visible'));
+  document.querySelectorAll('.nav-square').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('visible');
+  btn.classList.add('active');
+  currentArticle = id;
+  closeToc();
+}
+
+function handleSquare1Click(btn) {
+  if (currentArticle !== 'article-1') {
+    showArticle('article-1', btn);
+  } else {
+    const panel = document.getElementById('toc-panel');
+    if (panel.classList.contains('hidden')) {
+      openToc();
+    } else {
+      closeToc();
+    }
+  }
+}
+
+function buildToc() {
+  const list = document.getElementById('toc-list');
+  if (list.children.length > 0) return;
+
+  const tocData = document.getElementById('toc-data');
+  if (!tocData) return;
+
+  tocData.querySelectorAll('p[data-toc-level]').forEach(el => {
+    const link = el.querySelector('a[href^="#h."]');
+    if (!link) return;
+    const level = parseInt(el.getAttribute('data-toc-level') || '1', 10);
+    const a = document.createElement('a');
+    a.href = link.getAttribute('href');
+    a.textContent = link.textContent.trim();
+    a.className = 'toc-link toc-level-' + level;
+    a.addEventListener('click', () => closeToc());
+    list.appendChild(a);
+  });
+}
+
+function openToc() {
+  buildToc();
+  document.getElementById('toc-panel').classList.remove('hidden');
+}
+
+function closeToc() {
+  document.getElementById('toc-panel').classList.add('hidden');
+}
+
+// ── Close TOC when clicking outside ──
+document.addEventListener('click', function(e) {
+  const panel = document.getElementById('toc-panel');
+  if (panel.classList.contains('hidden')) return;
+  const square1 = document.querySelector('[data-target="article-1"]');
+  if (!panel.contains(e.target) && e.target !== square1) {
+    closeToc();
+  }
+});
+
+// ── Anchor scroll + back-button support ──
+const contentArea = document.querySelector('.content-area');
+
+// Disable browser's own scroll restoration (it operates on window, not our div)
+history.scrollRestoration = 'manual';
+history.replaceState({ scrollTop: 0 }, '', location.href);
+
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[href^="#"]');
+  if (!link) return;
+  const href = link.getAttribute('href');
+  const target = document.getElementById(href.slice(1));
+  if (!target) return;
+
+  e.preventDefault();
+
+  // Calculate destination offset within contentArea
+  const destScrollTop = target.getBoundingClientRect().top
+                      - contentArea.getBoundingClientRect().top
+                      + contentArea.scrollTop;
+
+  // Update CURRENT history entry with where the user actually is right now
+  history.replaceState({ scrollTop: contentArea.scrollTop }, '', location.href);
+
+  // Push new entry recording the destination position
+  history.pushState({ scrollTop: destScrollTop }, '', href);
+
+  contentArea.scrollTo({ top: destScrollTop, behavior: 'smooth' });
+});
+
+window.addEventListener('popstate', function(e) {
+  if (e.state && typeof e.state.scrollTop === 'number') {
+    // setTimeout ensures our scroll wins over any residual browser scroll attempt
+    setTimeout(() => {
+      contentArea.scrollTo({ top: e.state.scrollTop, behavior: 'smooth' });
+    }, 0);
+  }
+});
+</script>
+{{ end }}
